@@ -1,0 +1,508 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* Classes em comum */
+.zerar-padding{
+    padding: 0px;
+}
+.zerar-margin{
+    margin: 0;
+}
+
+/* Starting Header */
+#bx-hd{
+    background-color: rgb(145, 19, 145);
+    color: #fff;
+    height: 8vh;   
+}
+
+.icon-style{
+    color: rgb(255, 255, 255);
+}
+.icon-style:hover{
+    color: rgb(73, 71, 71);
+}
+#hd-txt-title{
+    font-size: 0.8em;
+    margin: 0px;
+}
+#txt-logged-user{
+    font-size: 0.7em;
+    display: none;
+}
+#icon-back{
+    font-size: 0.7em;
+    display: none;
+}
+#icon-add{
+    font-size: 0.7em;
+    display: none;
+}
+#logout{
+    font-size: 0.7em;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+#logout:hover{
+    color: rgb(73, 71, 71);
+    text-decoration: none;
+}
+/* Finishing Header */
+
+/* Starting Ticket Counter */
+#bx-ticket-counter{
+    background-color: rgb(72, 145, 145);
+    height: 12vh;
+    box-shadow: 0px 0px 17px 0px #000000;
+
+}
+#bx-sub-ticket-counter{
+    background-color: rgb(233, 233, 240);
+    height: 12vh;
+}
+#bx-1-ticket-counter{
+    /* background-color: aquamarine; */
+    color: rgb(0, 0, 0);
+   
+}
+#bx-2-ticket-counter{
+    /* background-color: rgb(25, 63, 50); */
+    color: rgb(4, 15, 172);
+
+}
+#bx-3-ticket-counter{
+    /* background-color: rgb(206, 255, 127); */
+    color: rgb(185, 163, 34);
+
+}
+#bx-4-ticket-counter{
+    /* background-color: rgb(160, 72, 46); */
+    color: rgb(33, 121, 52);
+
+}
+#bx-5-ticket-counter{
+    /* background-color: rgb(255, 127, 223); */
+    color: rgb(236, 10, 10);
+
+}
+.text-size-ticket-counter{
+    font-size: 0.5em;
+}
+/* Finishing Ticket Counter */
+
+/*Starting Login*/
+#bd-login{
+    height: 100vh;
+    background-color: rgb(30, 8, 48);
+}
+#bx-main{
+    background-color: rgb(223, 219, 219);
+    padding: 20px;   
+}
+.input-login{
+    width: 100%;
+}
+#btn-signin{
+    background-color: rgb(145, 19, 145);
+    color: rgb(255, 255, 255);
+}
+/*Ending Login*/
+
+/* Starting Index */
+#bx-main-index{
+    background-color: rgb(241, 241, 241); 
+    height: 80vh;
+       
+
+}
+#form-index{
+    height: 80vh; 
+    /* background-color: rgb(16, 110, 139); */
+  
+
+}
+#bx-left-index{
+    /* background-color: cadetblue; */
+    height: 36vh;
+    padding-top: 20px;
+  
+    
+}
+#bx-right-index{
+    /* background-color: chartreuse; */
+    height: 36vh;
+   
+
+
+}
+#btn-index{
+    /* background-color: rgb(255, 80, 217); */
+    height: 8vh;
+    
+}
+#btn-i{
+    background-color: rgb(126, 20, 64);
+    color: white;
+    padding: 10px 0px;
+   
+    
+}
+
+
+/* Ending Index */
+
+/* Starting Service Desk */
+#bx-menu-mobile{
+    /* display: none; */
+    width: 100%;
+    padding: 5px;
+    
+}
+#menu-mobile{
+    width: 100%;
+}
+#bx-service-desk{
+    /* border-width: 3px 0px 0px 0px;
+    border-color: rgb(105, 70, 170);
+    border-style: solid; */
+    height: 80vh;
+}
+#bx-sd-left{
+    background-color: rgb(230, 230, 230);
+    border-width: 0px 1px 0px 0px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    display: none;
+    height: 80vh;
+}
+
+#bx-sd-right{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 80vh;
+    
+    
+
+}
+#tickets-sd{
+    
+    height: 30vh; 
+    font-size: 0.8em; 
+    border-width: 0px 0px 2px 0px;
+    background-color: lightgrey;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    height: 30vh;
+    /* background-color: darkcyan; */
+    
+}
+.menu-sd{
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(230, 230, 230);
+    border-width: 1px 0px 1px 0px;
+    border-color: rgb(155, 152, 152);
+    border-style: solid;
+ 
+}
+.menu-sd a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu-sd:hover{
+    background-color: blue;
+}
+#tickets-sd-header-one{
+    width:100%;
+}
+#tickets-sd-header-two{
+    width:100%;
+}
+#tickets-sd-header-one p{
+    width: 25%;
+    text-align: center;
+}
+#tickets-sd-header-two p{
+    width: 25%;
+    text-align: center;
+}
+#tickets-sd-problem{
+    padding: 0px 5px;
+}
+#teste2{
+    padding: 0px 5px;
+
+}
+#header-sd{
+    background-color: rgb(127, 117, 190);
+}
+
+/* Ending Service Desk */
+
+/* Starting Ticket details */
+#caixa-principal{
+    /* background-color: darkgoldenrod; */
+    height: 92vh;
+}
+#caixa-sub-principal{
+    /* background-color: darkgreen; */
+    height: 92vh;
+}
+#cx-1{
+    background-color: rgb(180, 178, 189);
+    height: 20vh;
+}
+
+#cx-2{
+    /* background-color: darkblue; */
+    height: 72vh;
+}
+#caixa-tickets-detalhes{
+    /* background-color: darksalmon; */
+    height: 20vh;
+}
+#caixa-conteudo-2{
+    /* background-color: rgb(79, 74, 47); */
+    height: 72vh;
+  
+}
+.titulo-ticket-detalhe{
+    font-size: 0.8em;
+}
+.valor-ticket-detalhe{
+    font-size: 0.6em;
+}
+#i1{
+    /* background-color: forestgreen; */
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+    
+}
+
+#i2{
+    /* background-color: greenyellow; */
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
+#i3{
+    /* background-color: indianred; */
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
+#i4{
+    /* background-color: rgb(49, 2, 2); */
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
+.borda{
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: black;
+}
+#botao{
+    background-color: rgb(109, 16, 29);
+    padding: 3px;
+    color: #fff;
+}
+
+#bx-tickets-details{
+    background-color: chartreuse;
+    height: 12vh;
+}
+#bx-form-tickets-details{
+    background-color: darkcyan;
+    height: 80vh;
+}
+#bx-1-td{
+    background-color: darkgoldenrod;
+}
+#bx-2-td{
+    background-color: darkgreen;
+}
+#bx-3-td{
+    background-color: darkmagenta;
+}
+#bx-4-td{
+    background-color: darkslategrey;
+}
+#bx-form-tickets-details{
+    height: 80vh;
+}
+#form-td{
+    /* background-color: firebrick; */
+}
+.td-align-center {
+    margin: 0px;
+}
+.icon-td{
+    color: black;
+}
+.tamanho-texto{
+    font-size: 0.8em;
+}
+/* Ending Ticket Details */
+
+/* Starting Media Queries */
+
+
+@media (min-width: 576px) { 
+    
+    #hd-txt-title{
+        font-size: 1.0em;
+      
+    }
+    #txt-logged-user{
+        font-size: 0.8em;
+    }
+    #logout{
+        font-size: 0.8em;
+        
+    }
+    .text-size-ticket-counter{
+        font-size: 0.8em;
+    }
+    #form-index{
+        display: flex;
+        flex-direction: row;
+        /* background-color: yellow; */
+    }
+    #bx-left-index{
+        /* background-color: cadetblue; */
+        /* padding-top: 20px; */
+        height: 70vh;
+    }
+    #bx-right-index{
+        /* background-color: chartreuse; */
+        padding-top: 20px;
+        height: 70vh;
+    
+    }
+    #btn-index{
+        /* background-color: rgb(255, 80, 217); */
+        height: 10vh;
+    }
+    #txt-area-index{
+        height: 40vh;
+    }
+    #bx-menu-mobile{
+        display: none;
+        
+    }
+    #bx-sd-left{
+        display: block;
+        width: 35%;
+        
+    }
+    #bx-sd-right{
+        width: 65%;
+        overflow-y: auto;
+        height: 80vh;
+    
+    }
+    .menu-sd{
+        font-size: 0.8em;
+        
+    }
+    #cx-1{
+        /* background-color: crimson; */
+        height: 92vh;
+    }
+    
+    #cx-2{
+        /* background-color: rgb(139, 118, 0); */
+        height: 92vh;
+    }
+    #caixa-tickets-detalhes{
+        height: 92vh;
+    }
+    #caixa-conteudo-2{
+        height: 92vh;
+    }
+    .titulo-ticket-detalhe{
+        font-size: 1.0em;
+    }
+    .valor-ticket-detalhe{
+        font-size: 0.8em;
+    }
+    .tamanho-texto{
+        font-size: 1.0em;
+    }
+   
+    
+    
+    
+    
+}
+
+@media (min-width: 768px) {
+    
+     #hd-txt-title{
+        font-size: 1.2em;
+       
+    }
+    #txt-logged-user{
+        font-size: 1.0em;
+    }
+    #logout{
+        font-size: 1.0em;
+    }
+    .text-size-ticket-counter{
+        font-size: 0.9em;
+    }
+    #bx-left-index
+    {
+        /* background-color: darkorange; */
+    }
+    #bx-sd-left{
+        display: block;
+        width: 30%;
+    }
+    #bx-sd-right{
+        width: 70%;
+        
+    
+    }
+    #bx-td-main{
+        /* background-color: blueviolet; */
+        display: flex;
+          
+    }
+    #bx-tickets-details{
+       /* background-color: brown; */
+       
+    }
+    #bx-form-tickets-details{
+        /* background-color: cornflowerblue; */
+
+    }
+    .tamanho-texto{
+        font-size: 1.1em;
+    }
+  
+        
+ }
+
+@media (min-width: 992px) { 
+    #bx-sd-left{
+        display: block;
+        width: 20%;
+    }
+    #bx-sd-right{
+        width: 80%;
+        
+    
+    }
+     
+}
+
+@media (min-width: 1200px) { 
+  
+}
+
+/* Finishing Media Queries */
