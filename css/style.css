@@ -149,6 +149,10 @@
    
     
 }
+#txt-area-index{
+
+    resize: none;
+}
 
 
 /* Ending Index */
@@ -183,8 +187,11 @@
     background-color: rgb(255, 255, 255);
     height: 80vh;
     
-    
-
+}
+#bx-sd-descript{
+    background-color: aqua;
+    height: 10vh;
+    overflow-y: auto;
 }
 #tickets-sd{
     
@@ -233,7 +240,15 @@
 }
 #teste2{
     padding: 0px 5px;
+}
+#answer-problem{
+    margin: 0px 5px;
+    background-color: rgb(7, 161, 71);
+    
 
+}
+#icon-edit{
+    color: #000;
 }
 #header-sd{
     background-color: rgb(127, 117, 190);
@@ -242,6 +257,9 @@
 /* Ending Service Desk */
 
 /* Starting Ticket details */
+#text-area-td{
+    resize: none;
+}
 #caixa-principal{
     /* background-color: darkgoldenrod; */
     height: 92vh;
@@ -389,7 +407,9 @@
     }
     #txt-area-index{
         height: 40vh;
+        resize: none;
     }
+    
     #bx-menu-mobile{
         display: none;
         

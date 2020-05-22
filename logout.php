@@ -1,8 +1,12 @@
 <?php
     session_start();
-    if($_SESSION['nome']){
+    if(isset($_SESSION['email'])){
         //DELETA TODO DADO ASSOCIADO COM O USUARIO
-         session_destroy();
-         header('Location:login.php');
+        session_destroy();
+        header('Location:login.php');
+     }else{
+
+        header('Location:login.php');
+
      }
 ?>

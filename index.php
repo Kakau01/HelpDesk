@@ -1,5 +1,6 @@
 <?php
        session_start();    
+       $email = $_SESSION['email'] ;
      
 ?>
 <!DOCTYPE html>
@@ -39,34 +40,43 @@
         <?php include_once("include/ticketCounter.php");?>
     </div>
     <main id="bx-main-index" class="container-fluid">
-     <form action="" class="row" id="form-index">
+     <form action="newTicketValidation.php" method="post" class="row" id="form-index">
         <div id="bx-left-index" class="col-12 col-sm-5 col-md-4 col-lg-4 align-items-center">
             <div class="">
-                <label class="col-12 col-sm-12 p-0">Created by*</label>
-                <input class="col-12 col-sm-12 " type="text">
+                <label class="col-12 col-sm-12 p-0" for="">Created by*</label>
+                <input class="col-12 col-sm-12 " type="text" name="input-create-name" id="input-create-name">
             </div>
             <div class="">
-               <label class="col-12 col-sm-12  p-0">Priority*</label>
-                <select name="" id=""class="col-12 col-sm-12 "> 
-                    <option value=""></option>
+               <label class="col-12 col-sm-12  p-0" for="inpt-priority">Priority*</label>
+                <select name="priority" id="inpt-priority" class="col-12 col-sm-12 " required> 
+                    <option value="" disabled selected>Choose Your Priority</option>
+                    <!-- <option disabled selected>Choose your Priority</option> -->
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
                 </select>             
             </div>
             <div class="">
-                <label class="col-12 col-sm-12  p-0">Area*</label>
-                <select name="" id="" class="col-12 col-sm-12 ">
-                    <option value=""></option>
+                <label class="col-12 col-sm-12  p-0" for="inpt-area">Area*</label>
+                <select name="area" id="inpt-area" class="col-12 col-sm-12 " required>
+                    <option value="" disabled selected>Choose your Area</option>
+                    <option value="area1">Area 1</option>
+                    <option value="area2">Area 2</option>
+                    <option value="area3">Area 3</option>
                 </select>
             </div>
         </div>
         <div id="bx-right-index"  class="col-12 col-sm-7 col-md-8 col-lg-8">
             <div class="">
-                <label class="col-12 p-0">Subject*</label>
-                <input type="text" class="col-12">
+                <label class="col-12 p-0" for="inpt-subject">Subject*</label>
+                <input type="text" name="inpt-subject" id="inpt-subject" class="col-12" required>
             </div>
            <div class="" >
-                <label class="col-12 p-0">Description*</label>
-                <textarea name="" id="txt-area-index" cols="30" rows="4" class="col-12"></textarea>
+                <label class="col-12 p-0" for="txt-area-index">Description*</label>
+                <textarea name="inpt-description" id="txt-area-index" maxlength="500" cols="30" rows="4" class="col-12" required></textarea>
            </div>
+           <input type="hidden" name="status" value="new">
+
             
         </div >
         <div  class=" zerar-padding col-12 align-self-bottom d-flex flex-column justify-content-end " id="btn-index">

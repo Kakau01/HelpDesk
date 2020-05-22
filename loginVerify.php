@@ -15,8 +15,13 @@
         $nome = $result['Nome'];
         $email = $result['Email'];
         $pass = $result['Senha'];
+        $idUser = $result['Id_Usuario'];
+
         if(($inputEmail === $email) && ($inputPass === $pass)){
                 $_SESSION['nome'] = $nome;
+                $_SESSION['email'] = $email;
+                $_SESSION['idUser'] = $idUser;
+
                 header('Location:index.php');
                 
             }          
