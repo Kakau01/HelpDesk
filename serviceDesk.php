@@ -99,11 +99,11 @@
                         
                     </div>
                     <div id="answer-problem" class="text-justify">
-                        <p class="zerar-margin text-break">RESPOSTA:</p>
+                        <p class="zerar-margin text-break">RESPOSTA: <?php echo $row['Admin_resposta']; ?></p>
                     </div>
                     <div class="row" id="teste2">
                         <div class='col-6'>
-                            <p class="zerar-margin">Assign to: None</p>
+                            <p class="zerar-margin">Assign to: <?php echo $row['Admin_name']; ?></p>
                         </div>
                         <div class='col-6 text-right'>
                             <a id="icon-edit" href="ticketDetails.php?id_ticket=<?php echo $row['Id_ticket'];?>"><i class="fa fa-edit fa-2x"></i></a>

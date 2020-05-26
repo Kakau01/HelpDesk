@@ -76,6 +76,9 @@
                 <textarea name="inpt-description" id="txt-area-index" maxlength="500" cols="30" rows="4" class="col-12" required></textarea>
            </div>
            <input type="hidden" name="status" value="new">
+           <input type="hidden" name="admin_name" value="Aberto">
+           <input type="hidden" name="admin_resposta" value="sem_resposta">
+
 
             
         </div >

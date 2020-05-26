@@ -8,6 +8,8 @@
         $selectDB = "SELECT * FROM TB_ticket INNER JOIN TB_Usuario  ON TB_Usuario.Id_Usuario = TB_ticket.Id_Usuario WHERE Email = '$email'AND Id_Ticket = '$ticket_id'";
         $consultingDB= $connect->query($selectDB);
         $result = $consultingDB->fetch_assoc();
+
+        $_SESSION['ticket_id'] = $ticket_id;
        
 ?>
 <!DOCTYPE html>
@@ -51,7 +53,8 @@
     <main>
         <main class="container-fluid" id="caixa-principal">
             <div class="row" id="caixa-sub-principal">
-                <div id="cx-1" class="col-12 col-sm-4 col-md-3 col-lg-3">
+                <?php if(isset($result)){?>
+                <div id="cx-1" class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="row align-items-center" id="caixa-tickets-detalhes">
                         <div class="col-3 col-sm-12 text-center" id="i1">
                             <p class="titulo-ticket-detalhe">Ticket ID</p>
@@ -71,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="cx-2" class="col-12 col-sm-8 col-md-9 col-lg-9">
+                <div id="cx-2" class="col-12 col-sm-8 col-md-9 col-lg-10">
                     <form action="ticket-details-update.php" method="post" id="caixa-conteudo-2"
                         class="d-flex flex-column justify-content-around">
                         <div class="d-flex flex-column tamanho-texto ">
@@ -79,15 +82,15 @@
                             <input type="text" value="<?php echo $result['Subject_ticket'] ?>" disabled>
                         </div>
 
-                        <div class="d-flex flex-column tamanho-texto ">
+                        <div class="d-flex flex-column tamanho-texto">
                             <label for="">Description</label>
-                            <textarea name="" id="text-area-td" cols="30" rows="4" disabled>
-                            <?php echo $result['Description_ticket']; ?>
-                        </textarea>
+                            <textarea class="" name="" id="text-area-td" cols="30" rows="4"
+                                disabled><?php echo $result['Description_ticket']; ?></textarea>
                         </div>
                         <div class="d-flex flex-column tamanho-texto">
                             <label for="">Internal Comments</label>
-                            <input type="text" required>
+                            <input name="admin_resposta" type="text" value="<?php echo $result['Admin_resposta']; ?> "
+                                required>
                         </div>
 
                         <div class="row tamanho-texto borda">
@@ -95,28 +98,29 @@
                                 <p>Ticket Status</p>
                             </div>
                             <div class="col-6">
-                               <select name="status" id="inpt-status" required>
-                                <option value="" disabled selected>New</option>
-                                <!-- <option disabled selected>Choose your Priority</option> -->
-                                <option value="Closed">Closed</option>
-                                <option value="InProgress">In Progress</option>
-                              
-                            </select> 
+                                <select name="status" id="inpt-status" required>
+                                    <option value="" disabled selected>New</option>
+                                    <!-- <option disabled selected>Choose your Priority</option> -->
+                                    <option value="Closed">Closed</option>
+                                    <option value="InProgress">In Progress</option>
+
+                                </select>
                             </div>
-                            
+
                         </div>
                         <div class="row tamanho-texto borda">
                             <div class="col-6">
                                 <p>Assigned to</p>
                             </div>
                             <div class="col-6">
-                                <input type="text" required>
+                                <input name="admin_name" type="text" value="<?php echo $result['Admin_name']; ?> "
+                                    required>
                             </div>
-                            
-                            
+
+
                         </div>
                         <div class="row tamanho-texto borda">
-                            
+
                             <div class="col-6">
                                 <p>Area</p>
                             </div>
@@ -125,12 +129,13 @@
                             </div>
                         </div>
                         <div class="row tamanho-texto borda">
-                            
+
                             <div class="col-6">
                                 <p>Priority</p>
                             </div>
                             <div class="col-6">
-                                <input type="text" name="" id="" value="<?php echo $result['Priority_ticket'] ?>">
+                                <input type="text" name="" id="" value="<?php echo $result['Priority_ticket'] ?>"
+                                    disabled>
                             </div>
                         </div>
 
@@ -142,7 +147,11 @@
 
 
                     </form>
+
                 </div>
+                <?php }else{ echo header('Location:index.php'); }?>
+
+            </div>
         </main>
 </body>
 
