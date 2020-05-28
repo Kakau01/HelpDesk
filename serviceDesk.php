@@ -3,6 +3,7 @@
        include_once('connection.php');
 
        $email = $_SESSION['email'];
+      
 
        $select_tk ="SELECT * FROM TB_ticket INNER JOIN TB_Usuario  ON TB_Usuario.Id_Usuario = TB_ticket.Id_Usuario WHERE Email ='$email';
        ";
@@ -25,7 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
     #icon-back {
-        display: none;
+        display:block;
     }
 
     #logout {
@@ -39,10 +40,14 @@
     #txt-logged-user {
         display: none;
     }
+    #my-tickets{
+        display:none;
+    }
+    
     </style>
 </head>
 
-<body>
+<body id="bd-sd">
     <?php 
         //the varibles need to be before the include
         $title = "Service Desk";
@@ -55,12 +60,12 @@
     <main id="bx-service-desk">
         <div id="bx-menu-mobile">
             <form action="" id="form-filtro" method="post"></form>
-                <select name="menu-mobile" id="menu-mobile">
-                    <option value="" disabled selected>Choose your Option</option>
-                    <option value="todos">Todos</option>
-                    <option value="Closed">Closed</option>
-                    <option value="InProgress">InProgress</option>
-                    <option value="new">new</option>
+                <select name="menu-mobile" id="menu-mobile" class="pt-2 pb-2">
+                    <option value="" disabled selected>See My Tickets</option>
+                    <option value="todos">All Tickets</option>
+                    <option value="Closed">Closed Tickets</option>
+                    <option value="InProgress">Tickets In Progress</option>
+                    <option value="new">New Tickets</option>
                 </select>
             </form>
         </div>

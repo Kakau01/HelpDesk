@@ -3,6 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
 /* Classes em comum */
 .zerar-padding{
     padding: 0px;
@@ -14,6 +17,13 @@
     display: none;
 }
 /* Starting Header */
+#name-user-hd{
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 2px;
+    font-style: 0.5em;
+}
 #bx-hd{
     background-color: rgb(145, 19, 145);
     color: #fff;
@@ -24,15 +34,17 @@
     color: rgb(255, 255, 255);
 }
 .icon-style:hover{
-    color: rgb(73, 71, 71);
+    color: rgb(0, 0, 0);
 }
 #hd-txt-title{
-    font-size: 0.8em;
+    font-size: 0.7em;
     margin: 0px;
 }
 #txt-logged-user{
-    font-size: 0.7em;
+    font-size: 0.5em;
     display: none;
+   
+    
 }
 #icon-back{
     font-size: 0.7em;
@@ -43,12 +55,25 @@
     display: none;
 }
 #logout{
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: rgb(255, 255, 255);
     display: none;
 }
 #logout:hover{
-    color: rgb(73, 71, 71);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+#my-tickets{
+    font-size: 0.5em;
+    padding-right: 4px;
+    margin-right: 4px;
+    color: rgb(255, 255, 255);
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+#my-tickets:hover{
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 /* Finishing Header */
@@ -63,32 +88,36 @@
 #bx-sub-ticket-counter{
     background-color: rgb(233, 233, 240);
     height: 12vh;
+    box-shadow: inset 0px -1px 0px 0px black;
 }
 #bx-1-ticket-counter{
     /* background-color: aquamarine; */
     color: rgb(0, 0, 0);
+    font-weight: bold;
    
 }
 #bx-2-ticket-counter{
     /* background-color: rgb(25, 63, 50); */
     color: rgb(4, 15, 172);
+    font-weight: bold;
+
 
 }
 #bx-3-ticket-counter{
     /* background-color: rgb(206, 255, 127); */
-    color: rgb(185, 163, 34);
+    color: rgb(185, 114, 34);
+    font-weight: bold;
+
 
 }
 #bx-4-ticket-counter{
     /* background-color: rgb(160, 72, 46); */
     color: rgb(33, 121, 52);
+    font-weight: bold;
+
 
 }
-#bx-5-ticket-counter{
-    /* background-color: rgb(255, 127, 223); */
-    color: rgb(236, 10, 10);
 
-}
 .text-size-ticket-counter{
     font-size: 0.5em;
 }
@@ -113,6 +142,7 @@
 /*Ending Login*/
 
 /* Starting Index */
+
 #bx-main-index{
     background-color: rgb(241, 241, 241); 
     height: 80vh;
@@ -140,15 +170,20 @@
 }
 #btn-index{
     /* background-color: rgb(255, 80, 217); */
-    height: 8vh;
-    
+    height: 8vh;  
 }
 #btn-i{
     background-color: rgb(126, 20, 64);
     color: white;
-    padding: 10px 0px;
-   
-    
+    padding: 10px 0px;  
+    border-radius: 5px;
+}
+#btn-i:hover{
+    color: black;
+    font-weight: bold;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
 }
 #txt-area-index{
 
@@ -159,16 +194,23 @@
 /* Ending Index */
 
 /* Starting Service Desk */
+#ticket-title{
+    font-weight: bold;
+    text-transform: uppercase;
+}
 #bx-menu-mobile{
     /* display: none; */
     width: 100%;
     padding: 5px;
     display: flex;
     flex-direction: column;
-    
+    background-color: rgb(178, 171, 190);
+        
 }
 #menu-mobile{
     width: 100%;
+    border-radius: 5px;
+   
 }
 #bx-service-desk{
     /* border-width: 3px 0px 0px 0px;
@@ -176,6 +218,9 @@
     border-style: solid; */
     /* height: 80vh; */
 
+}
+#bd-sd{
+    overflow: hidden;
 }
 #bx-sd-left{
     /* /* background-color: rgb(230, 230, 230);
@@ -190,20 +235,27 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     height: 80vh;
+    overflow-y:auto;
     
     
 }
 #bx-sd-descript{
-    background-color: aqua;
-    height: 10vh;
+    /* background-color: aqua; */
+    height: 8vh;
     overflow-y: auto;
+    border: 1px solid rgb(136, 32, 197);
+    text-transform: lowercase;
+    padding: 5px;
+}
+#bx-sd-descript::first-letter{
+    text-transform: capitalize;
 }
 #tickets-sd{
     
     height: 30vh; 
     font-size: 0.8em; 
     border-width: 0px 0px 2px 0px;
-    background-color: lightgrey;
+    background-color: rgb(245, 237, 237);
     border-color: rgb(0, 0, 0);
     border-style: solid;
     height: 30vh;
@@ -245,12 +297,20 @@
 }
 #teste2{
     padding: 0px 5px;
+    /* background-color: rgb(224, 153, 0); */
+
 }
 #answer-problem{
     margin: 0px 5px;
-    background-color: rgb(7, 161, 71);
-    
+    white-space: nowrap;
 
+}
+#resposta-txt{
+    font-weight: bold;
+
+}
+#assign-to-txt{
+    font-weight: bold;
 }
 #icon-edit{
     color: #000;
@@ -262,6 +322,7 @@
 /* Ending Service Desk */
 
 /* Starting Ticket details */
+
 #text-area-td{
     resize: none;
 }
@@ -272,10 +333,16 @@
 #caixa-sub-principal{
     /* background-color: darkgreen; */
     height: 92vh;
+  
 }
 #cx-1{
     background-color: rgb(180, 178, 189);
     height: 20vh;
+    width: 100%;
+    
+}
+.inpt-size{
+    width: 130px;
 }
 
 #cx-2{
@@ -293,15 +360,25 @@
 }
 .titulo-ticket-detalhe{
     font-size: 0.8em;
+    height: 50%;
+    padding-top: 10px;
 }
 .valor-ticket-detalhe{
     font-size: 0.6em;
+    height: 50%;
+
 }
 #i1{
     /* background-color: forestgreen; */
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
+    height: 50%;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: black;
+   
+   
+
     
 }
 
@@ -309,19 +386,31 @@
     /* background-color: greenyellow; */
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
+    height: 50%;
+    border-width: 0px 0px 1px 1px;
+    border-style: solid;
+    border-color: black;
+
 }
 #i3{
     /* background-color: indianred; */
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
+    height: 50%;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color: black;
+
 }
 #i4{
     /* background-color: rgb(49, 2, 2); */
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
+    height: 50%;
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    border-color: black;
+
 }
 .borda{
     border-style: solid;
@@ -387,6 +476,11 @@
         font-size: 0.8em;
         
     }
+    #my-tickets{
+        font-size: 0.8em;
+        padding-right: 5px;
+        margin-right: 5px;
+    }
     .text-size-ticket-counter{
         font-size: 0.8em;
     }
@@ -399,7 +493,9 @@
         /* background-color: cadetblue; */
         /* padding-top: 20px; */
         height: 70vh;
+       
     }
+    
     #bx-right-index{
         /* background-color: chartreuse; */
         padding-top: 20px;
@@ -419,6 +515,9 @@
         width: 35%;
         background-color: rgb(178, 171, 190);
         height: 80vh;
+        border-width: 0px 1px 0px 0px;
+        border-style: solid;
+        border-color: black;
         
         
     }
@@ -429,12 +528,18 @@
     }
     #bx-sd-right{
         width: 65%;
-        overflow-y: auto;
+        /* overflow-y: auto; */
         height: 80vh;
     
     }
     .menu-sd{
         font-size: 0.8em;
+
+        
+    }
+    #menu-mobile{
+        border-radius: 5px;
+        
         
     }
     #bx-service-desk{
@@ -458,12 +563,56 @@
     }
     .titulo-ticket-detalhe{
         font-size: 1.0em;
+        padding-top: 20px;
+        font-weight: bold;
     }
     .valor-ticket-detalhe{
         font-size: 0.8em;
     }
     .tamanho-texto{
         font-size: 1.0em;
+    }
+    #i1{
+        /* background-color: forestgreen; */
+        margin: 0;
+        padding: 0;
+        border: none;
+        height: 25%;
+        
+    }
+    
+    #i2{
+        /* background-color: greenyellow; */
+        margin: 0;
+        padding: 0;
+        border-width: 1px 0px 0px 0px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        height: 25%;
+        
+    
+    }
+    #i3{
+        /* background-color: indianred; */
+        margin: 0;
+        padding: 0;
+        border: 1px solid black;
+        height: 25%;
+        border-width: 1px 0px 0px 0px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+    
+    }
+    #i4{
+        /* background-color: rgb(49, 2, 2); */
+        margin: 0;
+        padding: 0;
+        border: 1px solid black;
+        height: 25%;
+        border-width: 1px 0px 0px 0px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+    
     }
    
     
@@ -483,6 +632,10 @@
     }
     #logout{
         font-size: 1.0em;
+    }
+    #my-tickets{
+        font-size: 1.0em;
+
     }
     .text-size-ticket-counter{
         font-size: 0.9em;

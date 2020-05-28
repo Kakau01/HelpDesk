@@ -43,12 +43,12 @@
      <form action="newTicketValidation.php" method="post" class="row" id="form-index">
         <div id="bx-left-index" class="col-12 col-sm-5 col-md-4 col-lg-4 align-items-center">
             <div class="">
-                <label class="col-12 col-sm-12 p-0" for="">Created by*</label>
-                <input class="col-12 col-sm-12 " type="text" name="input-create-name" id="input-create-name">
+                <label class="col-12 col-sm-12 pl-0 " for="">Created by*</label>
+                <input class="col-12 col-sm-12 " type="text" name="input-create-name" id="input-create-name" value="<?php echo $user; ?> " readonly>
             </div>
             <div class="">
-               <label class="col-12 col-sm-12  p-0" for="inpt-priority">Priority*</label>
-                <select name="priority" id="inpt-priority" class="col-12 col-sm-12 " required> 
+               <label class="col-12 col-sm-12  pl-0 pt-1" for="inpt-priority">Priority*</label>
+                <select name="priority" id="inpt-priority" class="col-12 col-sm-12 pt-1 pb-1" required> 
                     <option value="" disabled selected>Choose Your Priority</option>
                     <!-- <option disabled selected>Choose your Priority</option> -->
                     <option value="High">High</option>
@@ -57,8 +57,8 @@
                 </select>             
             </div>
             <div class="">
-                <label class="col-12 col-sm-12  p-0" for="inpt-area">Area*</label>
-                <select name="area" id="inpt-area" class="col-12 col-sm-12 " required>
+                <label class="col-12 col-sm-12  pl-0 pt-1" for="inpt-area">Area*</label>
+                <select name="area" id="inpt-area" class="col-12 col-sm-12 pt-1 pb-1" required>
                     <option value="" disabled selected>Choose your Area</option>
                     <option value="area1">Area 1</option>
                     <option value="area2">Area 2</option>
@@ -68,12 +68,12 @@
         </div>
         <div id="bx-right-index"  class="col-12 col-sm-7 col-md-8 col-lg-8">
             <div class="">
-                <label class="col-12 p-0" for="inpt-subject">Subject*</label>
+                <label class="col-12 pl-0" for="inpt-subject">Subject*</label>
                 <input type="text" name="inpt-subject" id="inpt-subject" class="col-12" required>
             </div>
            <div class="" >
-                <label class="col-12 p-0" for="txt-area-index">Description*</label>
-                <textarea name="inpt-description" id="txt-area-index" maxlength="500" cols="30" rows="4" class="col-12" required></textarea>
+                <label class="col-12 pl-0 pt-1" for="txt-area-index">Description*</label>
+                <textarea name="inpt-description" id="txt-area-index" maxlength="500" cols="30" rows="4" class="col-12 pt-1 pb-1" required></textarea>
            </div>
            <input type="hidden" name="status" value="new">
            <input type="hidden" name="admin_name" value="Aberto">

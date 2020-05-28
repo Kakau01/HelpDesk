@@ -14,7 +14,7 @@
             <img class="mb-3 rounded" src="images/loginImg.png" width="70" height="70">
             <h2 class=" font-weight-normal mb-3">Please sign in</h2>
             <input class="input-login mb-2 mt-3 p-1" type="email"   name="input-email" placeholder="email@email.com" required autofocus>
-            <input class="input-login p-1 m-3 mt-3" type="password" name="input-pass" placeholder="******" required autofocus>
+            <input class="input-login p-1 m-3 mt-3" type="password" name="input-pass" placeholder="******" maxlength="6" required autofocus>
             <button id="btn-signin" class="btn btn-block" type="submit">Sign In</button>
         </form>
         

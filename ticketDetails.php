@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
     #icon-back {
-        display: block;
+        display: none;
     }
 
     #logout {
@@ -37,6 +37,10 @@
     }
 
     #txt-logged-user {
+        display: none;
+    }
+
+    #my-tickets {
         display: none;
     }
     </style>
@@ -56,49 +60,52 @@
                 <?php if(isset($result)){?>
                 <div id="cx-1" class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="row align-items-center" id="caixa-tickets-detalhes">
-                        <div class="col-3 col-sm-12 text-center" id="i1">
-                            <p class="titulo-ticket-detalhe">Ticket ID</p>
-                            <p class="valor-ticket-detalhe"><?php echo $result['Id_ticket']; ?></p>
+                        <div class="col-6 col-sm-12 text-center"  id="i1">
+                            <p class="titulo-ticket-detalhe m-0">Ticket ID:</p>
+                            <p class="valor-ticket-detalhe m-0"><?php echo $result['Id_ticket']; ?></p>
                         </div>
-                        <div class="col-3 col-sm-12 text-center" id="i2">
-                            <p class="titulo-ticket-detalhe">Created date</p>
-                            <p class="valor-ticket-detalhe"><?php echo $result['Data_ticket']; ?></p>
+                        <div class="col-6 col-sm-12 text-center" id="i2">
+                            <p class="titulo-ticket-detalhe m-0">Created date:</p>
+                            <p class="valor-ticket-detalhe m-0"><?php echo $result['Data_ticket']; ?></p>
                         </div>
-                        <div class="col-3 col-sm-12 text-center" id="i3">
-                            <p class="titulo-ticket-detalhe">Closed date</p>
-                            <p class="valor-ticket-detalhe">--</p>
+                        <div class="col-6 col-sm-12 text-center" id="i3">
+                            <p class="titulo-ticket-detalhe m-0">Closed date:</p>
+                            <p class="valor-ticket-detalhe m-0">--</p>
                         </div>
-                        <div class="col-3 col-sm-12 text-center" id="i4">
-                            <p class="titulo-ticket-detalhe">Created by</p>
-                            <p class="valor-ticket-detalhe"><?php echo $result['Created_by']; ?></p>
+                        <div class="col-6 col-sm-12 text-center" id="i4">
+                            <p class="titulo-ticket-detalhe m-0">Created by:</p>
+                            <p class="valor-ticket-detalhe m-0"><?php echo $result['Email']; ?></p>
                         </div>
+
                     </div>
+
+
                 </div>
                 <div id="cx-2" class="col-12 col-sm-8 col-md-9 col-lg-10">
                     <form action="ticket-details-update.php" method="post" id="caixa-conteudo-2"
                         class="d-flex flex-column justify-content-around">
                         <div class="d-flex flex-column tamanho-texto ">
                             <label for="">Subject</label>
-                            <input type="text" value="<?php echo $result['Subject_ticket'] ?>" disabled>
+                            <input type="text" class="pl-2" value="<?php echo $result['Subject_ticket'] ?>" disabled>
                         </div>
 
                         <div class="d-flex flex-column tamanho-texto">
                             <label for="">Description</label>
-                            <textarea class="" name="" id="text-area-td" cols="30" rows="4"
+                            <textarea class="pl-2" name="" id="text-area-td" cols="30" rows="4"
                                 disabled><?php echo $result['Description_ticket']; ?></textarea>
                         </div>
                         <div class="d-flex flex-column tamanho-texto">
-                            <label for="">Internal Comments</label>
-                            <input name="admin_resposta" type="text" value="<?php echo $result['Admin_resposta']; ?> "
+                            <label for="">Internal Comments*</label>
+                            <input class="pl-2" name="admin_resposta" type="text"  maxlenght="100" value="<?php echo $result['Admin_resposta']; ?> "
                                 required>
                         </div>
 
                         <div class="row tamanho-texto borda">
                             <div class="col-6">
-                                <p>Ticket Status</p>
+                                <p>Ticket Status*</p>
                             </div>
                             <div class="col-6">
-                                <select name="status" id="inpt-status" required>
+                                <select name="status" id="inpt-status" class="inpt-size pt-1 pb-1 pl-1" required>
                                     <option value="" disabled selected>New</option>
                                     <!-- <option disabled selected>Choose your Priority</option> -->
                                     <option value="Closed">Closed</option>
@@ -110,11 +117,11 @@
                         </div>
                         <div class="row tamanho-texto borda">
                             <div class="col-6">
-                                <p>Assigned to</p>
+                                <p>Assigned to*</p>
                             </div>
                             <div class="col-6">
-                                <input name="admin_name" type="text" value="<?php echo $result['Admin_name']; ?> "
-                                    required>
+                                <input class="inpt-size pl-1" name="admin_name" id="" type="text"
+                                    value="<?php echo $result['Admin_name']; ?> " required>
                             </div>
 
 
@@ -125,7 +132,8 @@
                                 <p>Area</p>
                             </div>
                             <div class="col-6">
-                                <input type="text" name="" id="" value="<?php echo $result['Area_ticket']; ?>" disabled>
+                                <input class="inpt-size pl-1" type="text" name="" id=""
+                                    value="<?php echo $result['Area_ticket']; ?>" disabled>
                             </div>
                         </div>
                         <div class="row tamanho-texto borda">
@@ -134,15 +142,15 @@
                                 <p>Priority</p>
                             </div>
                             <div class="col-6">
-                                <input type="text" name="" id="" value="<?php echo $result['Priority_ticket'] ?>"
-                                    disabled>
+                                <input class="inpt-size pl-1" type="text" name="" id=""
+                                    value="<?php echo $result['Priority_ticket'] ?>" disabled>
                             </div>
                         </div>
 
 
 
-                        <div class="d-flex flex-column">
-                            <button id="botao">Botao</button>
+                        <div class="row">
+                            <button id="botao" class="col-12">Botao</button>
                         </div>
 
 
