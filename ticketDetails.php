@@ -96,8 +96,7 @@
                         </div>
                         <div class="d-flex flex-column tamanho-texto">
                             <label for="">Internal Comments*</label>
-                            <input class="pl-2" name="admin_resposta" type="text"  maxlenght="100" value="<?php echo $result['Admin_resposta']; ?> "
-                                required>
+                            <input class="pl-2" name="admin_resposta" maxlength='80'  type="text" value="<?php echo $result['Admin_resposta']; ?> " required>
                         </div>
 
                         <div class="row tamanho-texto borda">
