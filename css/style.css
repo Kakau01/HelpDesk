@@ -10,7 +10,9 @@
 .zerar-margin{
     margin: 0;
 }
-
+.hide{
+    display: none;
+}
 /* Starting Header */
 #bx-hd{
     background-color: rgb(145, 19, 145);
@@ -133,8 +135,7 @@
 #bx-right-index{
     /* background-color: chartreuse; */
     height: 36vh;
-   
-
+    
 
 }
 #btn-index{
@@ -162,6 +163,8 @@
     /* display: none; */
     width: 100%;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
     
 }
 #menu-mobile{
@@ -171,21 +174,23 @@
     /* border-width: 3px 0px 0px 0px;
     border-color: rgb(105, 70, 170);
     border-style: solid; */
-    height: 80vh;
+    /* height: 80vh; */
+
 }
 #bx-sd-left{
-    background-color: rgb(230, 230, 230);
+    /* /* background-color: rgb(230, 230, 230);
     border-width: 0px 1px 0px 0px;
     border-color: rgb(0, 0, 0);
     border-style: solid;
     display: none;
-    height: 80vh;
-}
+    height: 80vh; */
+} 
 
 #bx-sd-right{
     width: 100%;
     background-color: rgb(255, 255, 255);
     height: 80vh;
+    
     
 }
 #bx-sd-descript{
@@ -411,12 +416,15 @@
     }
     
     #bx-menu-mobile{
-        display: none;
+        width: 35%;
+        background-color: rgb(178, 171, 190);
+        height: 80vh;
+        
         
     }
     #bx-sd-left{
-        display: block;
-        width: 35%;
+        /* display: block;
+        width: 35%; */
         
     }
     #bx-sd-right{
@@ -428,6 +436,10 @@
     .menu-sd{
         font-size: 0.8em;
         
+    }
+    #bx-service-desk{
+        display: flex;
+        flex-direction: row;
     }
     #cx-1{
         /* background-color: crimson; */
@@ -480,8 +492,12 @@
         /* background-color: darkorange; */
     }
     #bx-sd-left{
-        display: block;
+        /* display: block;
+        width: 30%; */
+    }
+    #bx-menu-mobile{
         width: 30%;
+        
     }
     #bx-sd-right{
         width: 70%;
@@ -510,8 +526,13 @@
 
 @media (min-width: 992px) { 
     #bx-sd-left{
-        display: block;
+        /* display: block;
+        width: 20%; */
+    }
+    #bx-menu-mobile{
         width: 20%;
+       
+        
     }
     #bx-sd-right{
         width: 80%;
