@@ -1,7 +1,7 @@
 <?php
 session_start();
     include_once("connection.php");
-    $selecionado =  $_POST['selecionado'];
+    $selecionado =  $_POST['selecionado']; 
     $email  = $_SESSION['email'];
     
 if($selecionado !== "todos"){
@@ -31,15 +31,14 @@ if($selecionado !== "todos"){
             <p class="zerar-margin"><?php echo $row['Data_ticket']; ?></p>
         </div>
     </div>
-    <div id="tickets-sd-problem" class="text-justify ">
+    <div id="tickets-sd-problem" class=" ">
         <h6 id="ticket-title"><?php echo $row['Subject_ticket']; ?></h6>
-        <div id="bx-sd-descript">
-            <p class="text-break zerar-margin"><?php echo $row['Description_ticket']; ?></p>
-        </div>
+        <textarea id="bx-sd-descript"  rows="2" class="text-break" reandoly><?php echo $row['Description_ticket']; ?>
+        </textarea>
 
     </div>
     <div id="answer-problem" class="text-justify">
-        <p class="zerar-margin text-break"><span id="resposta-txt">RESPOSTA:</span> <?php echo $row['Admin_resposta']; ?></p>
+        <span id="resposta-txt" class='text-break'>RESPOSTA:</span><span class="txt-break" id="resposta-txt-sd"><?php echo $row['Admin_resposta'];?></span>
     </div>
     <div class="row" id="teste2">
         <div class='col-6'>

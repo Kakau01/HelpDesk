@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
     #icon-back {
-        display:block;
+        display: block;
     }
 
     #logout {
@@ -40,10 +40,10 @@
     #txt-logged-user {
         display: none;
     }
-    #my-tickets{
-        display:none;
+
+    #my-tickets {
+        display: none;
     }
-    
     </style>
 </head>
 
@@ -59,31 +59,38 @@
     </div>
     <main id="bx-service-desk">
         <div id="bx-menu-mobile">
-            <form action="" id="form-filtro" method="post"></form>
-                <select name="menu-mobile" id="menu-mobile" class="pt-2 pb-2">
-                    <option value="" disabled selected>See My Tickets</option>
-                    <option value="todos">All Tickets</option>
-                    <option value="Closed">Closed Tickets</option>
-                    <option value="InProgress">Tickets In Progress</option>
-                    <option value="new">New Tickets</option>
-                </select>
+            <form action="" id="form-filtro" method="post">
+            <select name="menu-mobile" id="menu-mobile" class="pt-2 pb-2">
+                <option value="todos">All Tickets</option>
+                <option value="new">New Tickets</option>
+                <option value="InProgress">Tickets In Progress</option>
+                <option value="Closed">Closed Tickets</option>
+            </select>
             </form>
         </div>
         <div id="bx-sd-right"></div>
-       
+
     </main>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-        $(function(){
-            $("#menu-mobile").change(function(){
-                var selecionado =  $("#menu-mobile").val();
-                //enviando a variavel via post
-                $.post('filtro.php', {selecionado: selecionado}, function(data){
-                    $("#bx-sd-right").html(data);
-                });
+    $(function() {
+        var selecionado = "todos";
+        $.post('filtro.php', {
+            selecionado: selecionado
+        }, function(data) {
+            $("#bx-sd-right").html(data);
+        });
+        $("#menu-mobile").change(function() {
+            var selecionado = $("#menu-mobile").val();
+            //enviando a variavel via post
+            $.post('filtro.php', {
+                selecionado: selecionado
+            }, function(data) {
+                $("#bx-sd-right").html(data);
             });
         });
+    });
     </script>
 
 </body>

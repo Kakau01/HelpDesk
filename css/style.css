@@ -17,13 +17,7 @@ body{
     display: none;
 }
 /* Starting Header */
-#name-user-hd{
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-left: 2px;
-    font-style: 0.5em;
-}
+
 #bx-hd{
     background-color: rgb(145, 19, 145);
     color: #fff;
@@ -241,11 +235,15 @@ body{
 }
 #bx-sd-descript{
     /* background-color: aqua; */
-    height: 8vh;
+    
     overflow-y: auto;
     border: 1px solid rgb(136, 32, 197);
     text-transform: lowercase;
     padding: 5px;
+    width: 100%;
+    white-space: normal;
+    
+    
 }
 #bx-sd-descript::first-letter{
     text-transform: capitalize;
@@ -258,7 +256,7 @@ body{
     background-color: rgb(245, 237, 237);
     border-color: rgb(0, 0, 0);
     border-style: solid;
-    height: 30vh;
+
     /* background-color: darkcyan; */
     
 }
@@ -302,12 +300,16 @@ body{
 }
 #answer-problem{
     margin: 0px 5px;
-    white-space: nowrap;
 
 }
 #resposta-txt{
     font-weight: bold;
+    font-size: 0.8em;
 
+}
+#resposta-txt-sd{
+    font-size: 0.6em;
+    text-transform: lowercase;
 }
 #assign-to-txt{
     font-weight: bold;
@@ -613,6 +615,9 @@ body{
         border-style: solid;
         border-color: rgb(204, 204, 204);
     
+    }
+    #resposta-txt-sd{
+        font-size: 1.0em;
     }
    
     

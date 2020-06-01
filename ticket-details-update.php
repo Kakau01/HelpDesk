@@ -7,6 +7,23 @@
     $ticket_id = $_SESSION['ticket_id'];
     $admin_name =  $_POST['admin_name'];
     $admin_resposta =  $_POST['admin_resposta'];
+    $status = $_POST['status'];
+
+    
+    // $dataFechamento = date('Y-m-d');
+    // echo $dataFechamento; 
+    // exit;
+    // $datetime = $dataFechamento->format();
+   
+
+    // if($status === "Closed"){
+    //     echo "Funcionou";
+    // }else{
+    //     echo "Não esta fechado!";
+    // }
+
+    // exit;
+
 
     
 
@@ -19,14 +36,21 @@
 
 
     // echo $result['Email'];
-
-    $updateBD = "UPDATE TB_ticket set Status_Ticket = '$statusUpdate', Admin_name = '$admin_name', Admin_resposta = '$admin_resposta' WHERE Id_ticket = '$ticket_id'";
-    $result = $connect->query($updateBD);
-    if($result){
+    if($status === "Closed"){
+        $updateBD = "UPDATE TB_ticket set Status_Ticket = '$statusUpdate', Admin_name = '$admin_name', Admin_resposta = '$admin_resposta', Closed_date = CURRENT_DATE() WHERE Id_ticket = '$ticket_id'";
+        $result = $connect->query($updateBD);
+        // echo "<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>";
+        // echo "<script type='text/javascript' src='javascript/script.js>";
+       
         header('Location:serviceDesk.php');
+
+
     }else{
-        echo "Problema na conexao";
+        $updateBD = "UPDATE TB_ticket set Status_Ticket = '$statusUpdate', Admin_name = '$admin_name', Admin_resposta = '$admin_resposta' WHERE Id_ticket = '$ticket_id'";
+        $result = $connect->query($updateBD);
+        header('Location:serviceDesk.php');
     }
+    
 
 
 ?>

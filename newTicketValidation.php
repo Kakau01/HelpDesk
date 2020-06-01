@@ -16,7 +16,7 @@
     // echo $admin_resposta;
 
  
-    $inserindo_tk = "INSERT INTO TB_ticket(Created_by,Priority_ticket,Area_ticket,Subject_ticket,Description_ticket,Status_ticket,Admin_name,Admin_Resposta,Id_Usuario) VALUES ('$createdby','$priority','$area','$subject','$description','$status','$admin_name','$admin_resposta','$idUser')";
+    $inserindo_tk = "INSERT INTO TB_ticket(Created_by,Priority_ticket,Area_ticket,Subject_ticket,Description_ticket,Status_ticket,Admin_name,Admin_Resposta,Closed_date,Id_Usuario) VALUES ('$createdby','$priority','$area','$subject','$description','$status','$admin_name','$admin_resposta','','$idUser')";
     $result_insert_tk = mysqli_query($connect, $inserindo_tk);
 
     header('Location:serviceDesk.php');

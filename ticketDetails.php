@@ -8,9 +8,12 @@
         $selectDB = "SELECT * FROM TB_ticket INNER JOIN TB_Usuario  ON TB_Usuario.Id_Usuario = TB_ticket.Id_Usuario WHERE Email = '$email'AND Id_Ticket = '$ticket_id'";
         $consultingDB= $connect->query($selectDB);
         $result = $consultingDB->fetch_assoc();
-
         $_SESSION['ticket_id'] = $ticket_id;
-       
+        // $dataFechamento = new DateTime();
+        // $datetime = $dataFechamento->format('Y-m-d');
+
+      
+     
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +26,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="javascript/script.js"></script>
     <style>
     #icon-back {
         display: none;
@@ -60,7 +65,7 @@
                 <?php if(isset($result)){?>
                 <div id="cx-1" class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="row align-items-center" id="caixa-tickets-detalhes">
-                        <div class="col-6 col-sm-12 text-center"  id="i1">
+                        <div class="col-6 col-sm-12 text-center" id="i1">
                             <p class="titulo-ticket-detalhe m-0">Ticket ID:</p>
                             <p class="valor-ticket-detalhe m-0"><?php echo $result['Id_ticket']; ?></p>
                         </div>
@@ -70,7 +75,9 @@
                         </div>
                         <div class="col-6 col-sm-12 text-center" id="i3">
                             <p class="titulo-ticket-detalhe m-0">Closed date:</p>
-                            <p class="valor-ticket-detalhe m-0">--</p>
+                            <p class="valor-ticket-detalhe m-0"><?= $result['Status_ticket'] === "Closed" ?  
+                             $result['Closed_date'] :  ""; ?> 
+                        </p>
                         </div>
                         <div class="col-6 col-sm-12 text-center" id="i4">
                             <p class="titulo-ticket-detalhe m-0">Created by:</p>
@@ -96,7 +103,8 @@
                         </div>
                         <div class="d-flex flex-column tamanho-texto">
                             <label for="">Internal Comments*</label>
-                            <input class="pl-2" name="admin_resposta" maxlength='80'  type="text" value="<?php echo $result['Admin_resposta']; ?> " required>
+                            <input class="pl-2" name="admin_resposta" id="admin_resposta" maxlength='80' type="text"
+                                value="<?php echo $result['Admin_resposta']; ?> " required>
                         </div>
 
                         <div class="row tamanho-texto borda">
@@ -105,10 +113,16 @@
                             </div>
                             <div class="col-6">
                                 <select name="status" id="inpt-status" class="inpt-size pt-1 pb-1 pl-1" required>
-                                    <option value="" disabled selected>New</option>
-                                    <!-- <option disabled selected>Choose your Priority</option> -->
-                                    <option value="Closed">Closed</option>
-                                    <option value="InProgress">In Progress</option>
+                                    <option value="new"
+                                        <?= $result['Status_ticket'] ==='new' ?  "selected='selected'" : '';?>>New
+                                    </option>
+                                    <option value="Closed"
+                                        <?= $result['Status_ticket'] ==='Closed' ?  "selected='selected'" : '';?>>Closed
+                                    </option>
+                                    <option value="InProgress"
+                                        <?= $result['Status_ticket'] ==='InProgress' ?  "selected='selected'" : '';?>>In
+                                        Progress</option>
+
 
                                 </select>
                             </div>
@@ -119,7 +133,7 @@
                                 <p>Assigned to*</p>
                             </div>
                             <div class="col-6">
-                                <input class="inpt-size pl-1" name="admin_name" id="" type="text"
+                                <input class="inpt-size pl-1" name="admin_name" id="admin-name" type="text"
                                     value="<?php echo $result['Admin_name']; ?> " required>
                             </div>
 
@@ -157,9 +171,51 @@
 
                 </div>
                 <?php }else{ echo header('Location:index.php'); }?>
-
             </div>
+            <?php
+            if($result['Status_ticket'] === "Closed"){
+                echo  "<script>
+                    $('#inpt-status').attr('disabled', true);
+                    $('#admin-name').attr('disabled', true);
+                    $('#admin_resposta').attr('disabled', true);
+                    $('#botao').attr('disabled', true);
+                    $('#botao').css('background-color', '#cccccc');
+
+
+
+            </script>";
+        }else{
+            
+        }
+        ?>
         </main>
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="javascript/script.js"></script> -->
+        <script>
+        $(function() {
+
+            $("#caixa-conteudo-2").submit(function(event) {
+                var selec = $("#inpt-status").val();
+                // alert(selec);
+                // event.preventDefault();
+                if (selec == "Closed") {
+
+                    var confirmacao = confirm("Certeza que fechar o ticket?");
+                    if (!confirmacao) {
+                        event.preventDefault();
+                    } else {
+
+
+
+
+                    }
+
+                }
+
+            });
+        });
+        </script>
+
 </body>
 
 </html>
